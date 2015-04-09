@@ -86,3 +86,74 @@ let sites = ["http://www.bing.com";
              "http://www.yahoo.com"]
 
 sites |> List.map fetchUrl2
+
+(******************************
+
+04 Concepts
+
+Algebraic typing lets you combine existing types into new ones.
+a. Product types require all included types (like a tuple?)
+b. Union/sum types give you a choice of underlying types (like an enum kinda?)
+
+Control flow is done with pattern matching.
+c. Replaces "if/else"
+d. Replaces "switch"
+e. Replaces loops with recursion
+
+Used together, sum types and matching effectively provide polymorphism.
+f. Replacement passing subclasses to methods with superclass params
+
+******************************)
+
+type IntAndBool = {intPart:int; boolPart:bool} //a
+
+let x = {intPart=1; boolPart=true}  // x:IntAndBool
+
+type IntOrBool = //b
+    | IntChoice of int
+    | BoolChoice of bool
+
+let y = IntChoice 42 // y:IntOrBool
+let z = BoolChoice true //  z:IntOrBool
+
+let booleanExpression = true
+match booleanExpression with //c
+| true -> () // true branch
+| false -> () // false branch
+
+let aDigit = 0
+match aDigit with //d
+| 1 -> ()
+| 2 -> ()
+| _ -> () // no-match case
+
+let rec doSomethingWithAList list = //e
+    match list with
+    | [] -> printf "empty case"
+    | first::rest -> 
+        printf "do something with %s" first;  
+        doSomethingWithAList rest
+
+type Shape =
+| Circle of int
+| Rectangle of int * int
+| Polygon of (int * int) list
+| Point of (int * int)
+
+let draw shape =
+    match shape with
+    | Circle radius ->
+        printfn "The circle has a radius of %d" radius
+    | Rectangle (height, width) ->
+        printfn "The rectangle is %d high by %d wide" height width
+    | Polygon points ->
+        printfn "The polygon is made of these points %A" points
+    | _ ->
+        printfn "I don't recognize this shape"
+
+let circ = Circle 10
+let rect = Rectangle (4,5)
+let poly = Polygon [1,1;2,2;3,3]
+let point = Point (2,3)
+
+[circ; rect; poly; point] |> List.iter draw //f
