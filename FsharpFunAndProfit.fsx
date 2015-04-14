@@ -157,3 +157,31 @@ let poly = Polygon [1,1;2,2;3,3]
 let point = Point (2,3)
 
 [circ; rect; poly; point] |> List.iter draw //f
+
+(******************************
+
+11 Functions as Building Blocks
+
+a. ">>" is the composition operator
+b. This is equivalent to ">>" but messier
+c. Combining function is even easier with reduce
+
+******************************)
+
+let add2 x = x + 2
+let mult3 x = x * 3
+let square2 x = x * x
+
+let test x = [1..10] |> List.map x |> printfn "%A"
+
+test add2
+test mult3
+test square2
+
+let add2ThenMult3 = add2 >> mult3 //a
+let mult3ThenSquare x = square2(mult3 x) //b
+
+let funList = [add2;mult3;square2]
+let allFuns = List.reduce (>>) funList //c
+
+allFuns 1
