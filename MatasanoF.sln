@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MatasanoF", "MatasanoF.fsproj", "{B934D958-BAD6-493B-9272-5DB359CB0BBA}"
 EndProject
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "MatasanoF.Test", "MatasanoF.Test\MatasanoF.Test.fsproj", "{D9E60CE0-E970-4E02-9BC0-DF90F5C3A246}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B934D958-BAD6-493B-9272-5DB359CB0BBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B934D958-BAD6-493B-9272-5DB359CB0BBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B934D958-BAD6-493B-9272-5DB359CB0BBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9E60CE0-E970-4E02-9BC0-DF90F5C3A246}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9E60CE0-E970-4E02-9BC0-DF90F5C3A246}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9E60CE0-E970-4E02-9BC0-DF90F5C3A246}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9E60CE0-E970-4E02-9BC0-DF90F5C3A246}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
