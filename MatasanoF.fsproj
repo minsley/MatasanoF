@@ -50,6 +50,7 @@
     <None Include="App.config" />
     <None Include="FsharpFunAndProfit.fsx" />
     <Compile Include="Convert.fs" />
+    <Compile Include="Math.fs" />
     <Compile Include="Set01.fs" />
   </ItemGroup>
   <PropertyGroup>

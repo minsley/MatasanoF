@@ -2,12 +2,6 @@
 
 module Convert =
 
-    let parseHex s = System.Byte.Parse(s, System.Globalization.NumberStyles.AllowHexSpecifier)
-    let printHex (byte:byte) = System.String.Format("{0:x2}", byte)
-
-    let parseBase64 s = System.Convert.FromBase64String(s)
-    let printBase64 bytes = System.Convert.ToBase64String(bytes)
-
     let rec chunkStr (s:string) (i:int) : array<string> = 
         match s.Length < i with
         | true -> [||]
@@ -18,10 +12,20 @@ module Convert =
         | true -> [||]
         | false -> Array.append [|a.[0..i]|] (chunkArray a.[i..] i)
 
-    let hexStringToBytes s = 
-        chunkStr s 2 
-        |> Array.map parseHex
+    module Base64 =
 
-    let bytesToHexString (h:byte[]) = 
-        Array.map printHex h 
-        |> String.concat System.String.Empty
+        let ToBytes s = System.Convert.FromBase64String(s)
+        let FromBytes bs = System.Convert.ToBase64String(bs)
+
+    module Byte =
+        
+        let ToHex (b:byte) = System.String.Format("{0:x2}", b)
+        let FromHex s = System.Byte.Parse(s, System.Globalization.NumberStyles.AllowHexSpecifier)
+
+    module Bytes =
+        
+        let ToInts (bs:byte[]) = Array.map (int) bs
+        let FromInts is = Array.map (byte) is
+
+        let ToHex (bs:byte[]) = Array.map Byte.ToHex bs |> String.concat System.String.Empty 
+        let FromHex s = chunkStr s 2 |> Array.map Byte.FromHex
