@@ -1,0 +1,37 @@
+﻿<Properties StartupItem="MatasanoF.fsproj">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Analyze.fs">
+    <Files>
+      <File FileName="Convert.fs" Line="11" Column="25" />
+      <File FileName="MatasanoF.Test/Set01.fs" Line="58" Column="83" />
+      <File FileName="Analyze.fs" Line="52" Column="26" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="MatasanoF" expanded="True">
+            <Node name="MatasanoF" expanded="True">
+              <Node name="Analyze.fs" selected="True" />
+            </Node>
+            <Node name="MatasanoF.Test" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.NUnit.TestPad">
+        <State name="__root__">
+          <Node name="MatasanoF" expanded="True">
+            <Node name="MatasanoF.Test" expanded="True">
+              <Node name="Set01" expanded="True">
+                <Node name="Challenge01" selected="True" />
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+</Properties>
