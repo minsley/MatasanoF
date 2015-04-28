@@ -2,15 +2,7 @@
 
 module Convert =
 
-    let rec chunkStr (s:string) (i:int) : array<string> = 
-        match s.Length < i with
-        | true -> [||]
-        | false -> Array.append [|s.[0..i-1]|] (chunkStr s.[i..] i)
-
-    let rec chunkArray (a:array<'T>) i = 
-        match a.Length < i with
-        | true -> [||]
-        | false -> Array.append [|a.[0..i-1]|] (chunkArray a.[i..] i)
+    open Utilities
 
     module Base64 =
 
@@ -28,4 +20,4 @@ module Convert =
         let FromInts is = Array.map (byte) is
 
         let ToHex (bs:byte[]) = Array.map Byte.ToHex bs |> String.concat System.String.Empty 
-        let FromHex s = chunkStr s 2 |> Array.map Byte.FromHex
+        let FromHex s = Utilities.chunkStr s 2 |> Array.map Byte.FromHex

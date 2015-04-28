@@ -48,9 +48,9 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="FsharpFunAndProfit.fsx" />
-    <Compile Include="Convert.fs" />
+    <Compile Include="Utilities.fs" />
     <Compile Include="Math.fs" />
-    <Compile Include="Set01.fs" />
+    <Compile Include="Convert.fs" />
     <Compile Include="Analyze.fs" />
   </ItemGroup>
   <PropertyGroup>
